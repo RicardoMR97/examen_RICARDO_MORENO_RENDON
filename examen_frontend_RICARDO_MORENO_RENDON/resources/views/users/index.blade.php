@@ -11,6 +11,8 @@
 </head>
 <body>
     <div class="container py-3">
+        
+    <button data-bs-toggle="modal" data-bs-target="#modalEditUsuario" type="submit" class="btn btn-success registroUsuario">Registrar usuario</button>
         <div class="row">
             <h1>Listado de usuarios</h1>
 
@@ -268,8 +270,11 @@
             $('#fecha_nacimiento').val(infoRow.FechaNacimiento);
             $('#modalEditUsuario').modal("show");
         });
-
+        
+        $('.registroUsuario').on('click', function() {
+            $('#_token').val(csrf_token);
+            $('#modalEditUsuarioLabel').html("Registar usuario"); 
+        });
     </script>
 </body>
 </html>
-
