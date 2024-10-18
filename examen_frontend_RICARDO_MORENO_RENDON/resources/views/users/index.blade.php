@@ -261,6 +261,7 @@
             let infoRow = dataTable.row(this.closest('tr')).data();
 
             // Llenar los campos del formulario en el modal con los valores
+            $('#modalEditUsuarioLabel').html("Editar usuario"); 
             $('#id').val(infoRow.id);
             $('#_token').val(csrf_token);
             $('#nombre').val(infoRow.Name);
@@ -273,6 +274,11 @@
         
         $('.registroUsuario').on('click', function() {
             $('#_token').val(csrf_token);
+            $('#nombre').val('');
+            $('#email').val('');
+            $('#direccion').val('');
+            $('#telefono').val('');
+            $('#fecha_nacimiento').val('');
             $('#modalEditUsuarioLabel').html("Registar usuario"); 
         });
     </script>
